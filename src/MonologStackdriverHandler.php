@@ -36,8 +36,7 @@ class MonologStackdriverHandler extends AbstractProcessingHandler
             ],
             'labels' => [
                 'project_id' => $googleProjectId,
-            ],
-            'timestamp' => date('Y-m-dTH:i:sZ'),
+            ]
         ], $options);
     }
 
