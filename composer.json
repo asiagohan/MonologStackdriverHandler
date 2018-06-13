@@ -9,11 +9,10 @@
             "email": "asiagohan34@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5",
         "monolog/monolog": "~1.11",
-        "google/cloud": "~0.20"
+        "google/cloud-logging": "^1.12"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
