@@ -55,3 +55,5 @@ Add a log channel to the `config/logging.php` as below:
         ]
     ]
 ]
+```
+Then make sure to set your `LOG_CHANNEL` env variable to `stackdriver`
