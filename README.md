@@ -10,8 +10,8 @@ You can install the latest version with:
 $ composer require asiagohan/monolog-stackdriver-handler
 ```
 
-### When use it with Laravel5
-edit bootstrap/app.php as below:
+### To use with Laravel versions <= 5.5
+edit `bootstrap/app.php` as below:
 ```php
 $app->configureMonologUsing(function ($monolog) {
      $stackdriverHandler = new MonologStackdriverHandler\MonologStackdriverHandler('googleProjectId');
@@ -36,3 +36,22 @@ $app->configureMonologUsing(function ($monolog) {
      $monolog->pushHandler($stackdriverHandler);
 });
 ```
+
+### To use with Laravel versions >= 5.6
+Add a log channel to the `config/logging.php` as below:
+```php
+'stackdriver' => [
+    'driver' => 'monolog',
+    'handler' => MonologStackdriverHandler\MonologStackdriverHandler::class,
+    'with' => [
+        'googleProjectId' => 'googleProjectId',
+        'logName' => 'logName',
+        'options' => [
+            'resource' => [
+               'labels' => [
+                   'foo' => 'bar',
+               ],
+           ]
+        ]
+    ]
+]
